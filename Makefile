@@ -49,12 +49,13 @@ dist: clean
 install: all
 	@echo installing executables to ${DESTDIR}${PREFIX}/bin
 	@mkdir -p ${DESTDIR}${PREFIX}/bin
-	@cp -f dmenu dmenu_path dmenu_run stest dmen.sh ${DESTDIR}${PREFIX}/bin
+	@cp -f dmenu dmenu_path dmenu_run stest dmen.sh dmen_run.sh ${DESTDIR}${PREFIX}/bin
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_path
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_run
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/stest
 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmen.sh
+	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmen_run.sh
 	@echo installing manual pages to ${DESTDIR}${MANPREFIX}/man1
 	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
 	@sed "s/VERSION/${VERSION}/g" < dmenu.1 > ${DESTDIR}${MANPREFIX}/man1/dmenu.1
@@ -69,6 +70,7 @@ uninstall:
 	@rm -f ${DESTDIR}${PREFIX}/bin/dmenu_run
 	@rm -f ${DESTDIR}${PREFIX}/bin/stest
 	@rm -f ${DESTDIR}${PREFIX}/bin/dmen.sh
+	@rm -f ${DESTDIR}${PREFIX}/bin/dmen_run.sh
 	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
 	@rm -f ${DESTDIR}${MANPREFIX}/man1/dmenu.1
 	@rm -f ${DESTDIR}${MANPREFIX}/man1/stest.1
